@@ -5,7 +5,7 @@ class Solution:
         result = high
 
         while low <= high:
-            k = (high + low) // 2
+            k = high + low // 2
             h1 = 0
             for i in piles:
                 h1 += math.ceil(float(i)/k)
