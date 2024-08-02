@@ -5,9 +5,7 @@ class TimeMap:
 
     def set(self, key: str, value: str, timestamp: int) -> None:
         if self.timeMap.get(key):
-            oldList = self.timeMap.get(key)
-            oldList.append([value, timestamp])
-            self.timeMap.update({key : oldList})
+            self.timeMap[key].append([value, timestamp])
         else:    
             self.timeMap.update({key : [[value, timestamp]]})
 
@@ -28,8 +26,10 @@ class TimeMap:
 
         if timeValList[0][1] > timestamp:
             return ""
+
         while timeValList[mid][1] > timestamp and mid > 0:
             mid-=1
+
         return timeValList[mid][0] 
 # Your TimeMap object will be instantiated and called as such:
 # obj = TimeMap()
