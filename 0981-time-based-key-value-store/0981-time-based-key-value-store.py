@@ -24,13 +24,12 @@ class TimeMap:
             if timeValList[mid][1] < timestamp:
                 low = mid + 1
             else:
-                high = mid - 1
-        while timeValList[mid][1] > timestamp and mid > 0:
-            mid-=1
+                high = mid - 1 
 
         if timeValList[0][1] > timestamp:
             return ""
-
+        while timeValList[mid][1] > timestamp and mid > 0:
+            mid-=1
         return timeValList[mid][0] 
 # Your TimeMap object will be instantiated and called as such:
 # obj = TimeMap()
