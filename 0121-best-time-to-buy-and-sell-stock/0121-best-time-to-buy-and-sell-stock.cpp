@@ -9,8 +9,7 @@ public:
 
         while(j < prices.size()){
             int current = prices.at(j) - prices.at(i);
-            if(maximum < current)
-                maximum = current;
+            maximum = max(current, maximum);
             if(prices.at(j) < prices.at(i))
                 i = j;
             j++;
