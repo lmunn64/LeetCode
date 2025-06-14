@@ -7,7 +7,6 @@ class Solution {
             String joined = String.join("", split);
             hm.computeIfAbsent(joined, k -> new ArrayList<>()).add(s);
         }
-        List<List<String>> out = new ArrayList<>(hm.values());
-        return out;
+        return new ArrayList<>(hm.values());
     }
 }
